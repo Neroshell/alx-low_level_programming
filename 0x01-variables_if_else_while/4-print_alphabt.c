@@ -14,5 +14,5 @@ int main(void)
 		if (i != 'a' && i != 'e')
 			putchar(i);
 	putchar('\n');
-	return(0);
+	return (0);
 }
