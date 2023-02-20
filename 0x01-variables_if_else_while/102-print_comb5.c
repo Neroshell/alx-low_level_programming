@@ -8,40 +8,43 @@ i* Return: prints doub;e digit from 00 - 99
 
 int main(void)
 {
-	int n, z, y, p, p1, p2;
+	int c, i, j, k;
 
-	for (p = 48; p < 58 ; p++)
+	for (c = 48; c <= 57 ; c++)
 	{
-		for (y = 48 ; y < 57; y++)
+		for (i = 48 ; i < 57; i++)
 		{
-			for (z =  48 ; z < 58; z++)
+			for (k =  48 ; k <= 57; k++)
 			{
 
-				for (n = 48 ; n < 58; n++)
+				for (j = 48 ; j <= 57; j++)
 				{
-					p1 = (p * 10) + y;
-					p2 = (z * 10) + n;
+				if (((k + j) > (c + i) &&  k >= c) || c < k)
 
-
-					if (p1 < p2)
 					{
-					putchar(p);
-					putchar(y);
+
+					putchar(c);
+					putchar(i);
 					putchar(' ');
-					putchar(z);
-					putchar(n);
+					putchar(k);
+					putchar(j);
 
-					if (p == 57 && y == 56 && z == 57 && n == 57)
+					if (c + i + k + j == 227 && c == 57)
 
-						break;
+							{
+							break;
+							}
+							else
+							{
+							putchar(',');
+							putchar(' ');
+							}
 					}
-						putchar(',');
-						putchar(' ');
 				}
-
 			}
 
 		}
 	}
-return (0);
+	putchar('\n');
+	return (0);
 }
