@@ -27,9 +27,11 @@ int main(void)
 
 					if (n != 57 || z != 56 || y != 57 || p != 57)
 					{
+						break;
+					}
 						putchar(' ');
 						putchar(',');
-					}
+
 				}
 			}
 		}
