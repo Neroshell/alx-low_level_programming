@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
-* ass - add two numbers
-* @a: para 1
+* add - add two numbers
+* @a: parameter 1
+* @b: parameter 2
 * Return: sum
 */
 
