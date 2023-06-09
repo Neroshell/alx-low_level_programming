@@ -2,54 +2,54 @@
 #include "main.h"
 
 /**
- * _atoi - converts a string to an integer
- * @s: string to be converted
+ * _atoi - Converts a string to an integer
+ * @str: The string to be converted
  *
- * Return: the int converted from the string
+ * Return: The integer converted from the string
  */
-int _atoi(char *s)
+int _atoi(char *str)
 {
-	int i, d, n, len, f, digit;
+	int index, sign, result, length, foundNumber, digit;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
+	index = 0;
+	sign = 0;
+	result = 0;
+	length = 0;
+	foundNumber = 0;
 	digit = 0;
 
-	while (s[len] != '\0')
-		len++;
+	/* Calculate the length of the string */
+	while (str[length] != '\0')
+		length++;
 
-	while (i < len && f == 0)
+	while (index < length && foundNumber == 0)
 	{
-		if (s[i] == '-')
-			++d;
+		if (str[index] == '-')
+			++sign;
 
-		if (s[i] >= '0' && s[i] <= '9')
+		if (str[index] >= '0' && str[index] <= '9')
 		{
-			digit = s[i] - '0';
-			if (d % 2)
+			digit = str[index] - '0';
+			if (sign % 2)
 				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
+			result = result * 10 + digit;
+			foundNumber = 1;
+			if (str[index + 1] < '0' || str[index + 1] > '9')
 				break;
-			f = 0;
+			foundNumber = 0;
 		}
-		i++;
+		index++;
 	}
 
-	if (f == 0)
+	if (foundNumber == 0)
 		return (0);
 
-	return (n);
+	return (result);
 }
-
 /**
- * main - multiplies two numbers
- * @argc: number of arguments
- * @argv: array of arguments
+ * main - Multiplies two numbers
+ * @argc: Number of command line arguments
+ * @argv: Array of command line arguments
  *
  * Return: 0 (Success), 1 (Error)
  */
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 {
 	int result, num1, num2;
 
-	if (argc < 3 || argc > 3)
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
